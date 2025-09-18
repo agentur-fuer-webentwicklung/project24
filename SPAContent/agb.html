@@ -35,9 +35,7 @@
       </div>
     </div>
   </header>
-
   <div id="overlay" class="fixed inset-0 bg-black/50 hidden opacity-0 transition-opacity duration-300 z-40"></div>
-
   <aside id="menu" class="fixed top-0 left-0 w-64 h-full bg-red-900 shadow-lg transform -translate-x-full transition-transform duration-300 z-50">
     <div class="flex justify-between items-center p-4 border-b border-black/20">
       <h2 class="text-lg font-bold text-white">Menü</h2>
@@ -52,9 +50,7 @@
       <li><a href="/SPAContent/seminare.html" class="block text-gray-300 hover:text-white">Seminare (ASF)</a></li>
     </ul>
   </aside>
-
   <main id="content"></main>
-
   <footer class="bg-red-950 text-red-300 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-10 md:grid-cols-4 md:gap-8 text-center md:text-left">
@@ -121,7 +117,6 @@
       </div>
     </div>
   </footer>
-
   <div id="loader" class="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center opacity-100 pointer-events-auto transition-opacity duration-200">
     <div class="relative w-24 h-24 flex items-center justify-center">
       <div class="absolute inset-0 rounded-full bg-red-800 opacity-20 animate-ping"></div>
@@ -129,7 +124,6 @@
     </div>
     <p class="mt-6 text-red-800 text-xl font-medium tracking-widest">Fahrschule Ciaran GmbH</p>
   </div>
-
   <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-red-900 text-gray-200 p-4 shadow-lg z-50 hidden">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0">
       <p class="text-sm md:text-base text-center md:text-left">
@@ -146,7 +140,6 @@
       </div>
     </div>
   </div>
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const loader = document.getElementById('loader');
@@ -154,8 +147,7 @@
       loader.classList.remove('hidden', 'pointer-events-none');
       loader.classList.remove('opacity-0');
       content.classList.add('hidden');
-
-      fetch('/AJAXContent/content.agb.html')
+      fetch('/AJAXContent/content.agb.html')                                  // Verknüpfung
         .then(r => r.text())
         .then(html => { content.innerHTML = html; })
         .catch(err => { console.error('Fehler beim Laden:', err); })
@@ -169,32 +161,25 @@
           }, 650);
         });
     });
-
-    // Menü-Funktion
     document.addEventListener("DOMContentLoaded", () => {
       const menuButton = document.getElementById("menu-button");
       const menu = document.getElementById("menu");
       const closeMenu = document.getElementById("close-menu");
       const overlay = document.getElementById("overlay");
-
       function openMenu() {
         menu.classList.remove("-translate-x-full");
         overlay.classList.remove("hidden");
         setTimeout(() => overlay.classList.add("opacity-100"), 10);
       }
-
       function closeMenuFn() {
         menu.classList.add("-translate-x-full");
         overlay.classList.remove("opacity-100");
         setTimeout(() => overlay.classList.add("hidden"), 300);
       }
-
       menuButton.addEventListener("click", openMenu);
       closeMenu.addEventListener("click", closeMenuFn);
       overlay.addEventListener("click", closeMenuFn);
     });
-
-    // Cookie-Banner
     document.addEventListener("DOMContentLoaded", () => {
       const banner = document.getElementById("cookie-banner");
       const acceptBtn = document.getElementById("cookie-accept");
@@ -210,8 +195,6 @@
         banner.classList.add("hidden");
       });
     });
-
-    // Scroll zu Footer
     document.addEventListener("DOMContentLoaded", () => {
       const scrollFooterBtn = document.getElementById("scroll-footer");
       scrollFooterBtn.addEventListener("click", () => {
