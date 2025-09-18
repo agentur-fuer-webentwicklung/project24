@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fahrschule Ciaran GmbH</title>
+  <meta property="og:title" content="Fahrschule Ciaran GmbH - Führerscheinausbildung in Münster" />
+  <meta property="og:description" content="Professionelle Fahrschule in Münster. Führerschein Ausbildung für Pkw, Motorrad & Lkw mit erfahrenen Fahrlehrern." />
+  <meta property="og:type" content="business" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:image" content="https://placehold.co/1200x630" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #0A0A0A; color: #E0E0E0; }
+    .hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(45deg, rgba(0,0,0,0.7) 0%, rgba(214,57,57,0.4) 100%); }
+    .hero-content { position: relative; z-index: 10; text-align: center; max-width: 800px; padding: 0 2rem; }
+    .hero-buttons { display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; flex-wrap: wrap; }
+    .hero-button { padding: 1.2rem 2.5rem; font-size: 1.1rem; font-weight: 600; border-radius: 10px; transition: all 0.3s ease; }
+    .hero-button-primary { background: #D63939; color: white; border: none; }
+    .hero-button-primary:hover { background: #a72c2c; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(214,57,57,0.3); }
+    .hero-button-secondary { background: transparent; color: #D63939; border: 2px solid #D63939; }
+    .hero-button-secondary:hover { background: #D63939; color: white; transform: translateY(-3px); }
+    .menu-card { transition: transform 0.3s ease, box-shadow 0.3s ease; border-color: rgba(214,57,57,0.2); }
+    .menu-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(214,57,57,0.3); }
+    .floating-element { animation: float 6s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+    .spice-pattern { background-image: radial-gradient(circle, rgba(214,57,57,0.1) 2px, transparent 2px); background-size: 30px 30px; }
+    .map-container { border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .stat-item { text-align: center; padding: 2rem; background: rgba(214,57,57,0.1); border-radius: 12px; border: 1px solid rgba(214,57,57,0.2); }
+    .stars { color: #FFD700; font-size: 1.5rem; margin-bottom: 0.5rem; }
+    h1, h2, h3, h4 { color: #FFFFFF; }
+    p { color: #E0E0E0; }
+  </style>
+</head>
+<body>
+<header>
+  <section class="hero-section relative" role="banner">
+    <video autoplay muted loop playsinline aria-hidden="true" class="absolute inset-0 w-full h-full object-cover">
+      <source src="/LOGOContent/hintergrund.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content relative z-10">
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+        Fahrschule <span class="text-[#D63939]">Ciaran GmbH</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-300 mb-8">
+        Professionelle Führerscheinausbildung in Münster – sicher, schnell und kompetent
+      </p>
+      <div class="hero-buttons">
+        <button class="hero-button hero-button-primary" onclick="showRegistration()" aria-label="Jetzt anmelden">Jetzt Anmelden</button>
+<button class="hero-button hero-button-secondary" onclick="window.location.href='../SPAContent/kurse.html'" aria-label="Unsere Kurse ansehen"> Kurse Ansehen </button>
+      </div>
+    </div>
+  </section>
+</header>
+<main>
+  <section class="py-20 bg-black spice-pattern" aria-labelledby="about-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="floating-element">
+          <img src="../LOGOContent/auto.png" alt="Fahrschule Symbolbild" loading="lazy" class="rounded-lg shadow-2xl" />
+        </div>
+        <div>
+          <h2 id="about-heading" class="text-4xl font-bold text-[#D63939] mb-6">Deine Fahrschule</h2>
+          <p class="text-gray-300 text-lg mb-6">
+            Unsere Fahrschule überzeugt mit langjähriger Erfahrung, modernen Fahrzeugen und einer hohen Erfolgsquote. Mit geduldigen Fahrlehrern und einer entspannten Lernatmosphäre begleiten wir dich zuverlässig bis zum Führerschein.
+          </p>
+          <p class="text-gray-300 text-lg mb-8">
+            Noch kein Führerschein? Bewirb dich jetzt!
+          </p>
+          <div class="grid grid-cols-3 gap-8 text-center" role="list">
+            <div role="listitem">
+              <div class="text-3xl font-bold text-[#D63939]">XX+</div>
+              <div class="text-gray-400">Standorte</div>
+            </div>
+            <div role="listitem">
+              <div class="text-3xl font-bold text-[#D63939]">XXX+</div>
+              <div class="text-gray-400">Fahrschüler</div>
+            </div>
+            <div role="listitem">
+              <div class="text-3xl font-bold text-[#D63939]">XX+</div>
+              <div class="text-gray-400">Fahrlehrer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section class="py-20 bg-[#0A0A0A]" aria-labelledby="location-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 id="location-heading" class="text-4xl font-bold text-[#D63939] mb-4">
+        Unser Standort & Bewertungen
+      </h2>
+      <p class="text-gray-400 text-lg">
+        Besuche uns in Münster und überzeuge dich selbst!
+      </p>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <div class="space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="flex flex-col items-center p-6 bg-[#1a0a0a] rounded-2xl shadow-md border border-[#D63939]/20">
+            <div class="text-[#FFD700] text-lg">★★★★★</div>
+            <div class="text-4xl font-extrabold text-[#D63939] mt-2">4.9</div>
+            <p class="text-gray-300 mt-1">Durchschnitt</p>
+          </div>
+          <div class="flex flex-col items-center p-6 bg-[#1a0a0a] rounded-2xl shadow-md border border-[#D63939]/20">
+            <div class="text-4xl font-extrabold text-[#D63939]">1.250+</div>
+            <p class="text-gray-300 mt-1">Fahrschüler</p>
+          </div>
+          <div class="flex flex-col items-center p-6 bg-[#1a0a0a] rounded-2xl shadow-md border border-[#D63939]/20">
+            <div class="text-4xl font-extrabold text-[#D63939]">98%</div>
+            <p class="text-gray-300 mt-1">Bestanden</p>
+          </div>
+        </div>
+      </div>
+      <div class="w-full h-96 rounded-2xl overflow-hidden shadow-xl border border-[#D63939]/20">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191253.746748705!2d7.4171979!3d51.9501624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b9bac399f760df%3A0x21eb4ca77bf328eb!2sM%C3%BCnster!5e0!3m2!1sde!2sde!4v1726653412345!5m2!1sde!2sde" 
+          width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full h-full"
+          title="Standort der Fahrschule">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-[#D63939]/20 text-gray-200 p-4 shadow-lg z-50 hidden" role="dialog" aria-live="polite">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0">
+      <p class="text-sm md:text-base text-center md:text-left">
+        Wir verwenden Cookies, um Ihr Erlebnis zu verbessern. Mehr erfahren Sie in unserer 
+        <a href="#" class="underline hover:text-white">Cookie-Richtlinie</a>.
+      </p>
+      <div class="flex space-x-3">
+        <button id="cookie-accept" class="bg-[#D63939] hover:bg-[#a72c2c] px-4 py-2 rounded-lg text-sm font-semibold">Akzeptieren</button>
+        <button id="cookie-decline" class="bg-gray-500 hover:bg-gray-600 px-4 py-2 rounded-lg text-sm font-semibold">Ablehnen</button>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const cookieBanner = document.getElementById('cookie-banner');
+    if (!localStorage.getItem('cookieConsent')) {
+      setTimeout(() => { cookieBanner.classList.remove('hidden'); }, 2000);
+    }
+    document.getElementById('cookie-accept').addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'accepted');
+      cookieBanner.classList.add('hidden');
+    });
+    document.getElementById('cookie-decline').addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'declined');
+      cookieBanner.classList.add('hidden');
+    });
+  });
+  function showRegistration() { alert("Hier geht es zur Anmeldung der Fahrschule!"); }
+  function showCourses() { alert("Hier geht es zu unseren Kursen!"); }
+</script>
+</body>
+</html>

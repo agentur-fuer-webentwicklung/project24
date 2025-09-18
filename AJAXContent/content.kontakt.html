@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Konto – Registrierung & Anmeldung</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Titel -->
+    <section class="mb-12 text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold text-emerald-900 mb-4">Konto & Anmeldung</h1>
+      <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+        Erstelle dein Konto oder melde dich an. Sichere Registrierung mit Zustimmung zu AGB & Datenschutz. 
+        Wenn die Registrierung nicht möglich ist, nutze alternativ die Anmeldung.
+      </p>
+    </section>
+
+    <!-- Karten: Registrierung / Anmeldung -->
+    <section class="mb-12">
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Registrierung -->
+        <div class="bg-white shadow rounded-2xl p-6">
+          <div class="flex items-center justify-center text-emerald-700 text-3xl mb-3"><i class="fas fa-user-plus"></i></div>
+          <h2 class="font-bold text-xl text-emerald-900 mb-3 text-center">Konto erstellen</h2>
+          <form id="register-form" class="space-y-4" novalidate>
+            <div>
+              <label for="reg-name" class="block text-gray-700 font-medium mb-1">Name</label>
+              <input id="reg-name" name="name" type="text" required
+                     class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+            </div>
+            <div>
+              <label for="reg-email" class="block text-gray-700 font-medium mb-1">E-Mail</label>
+              <input id="reg-email" name="email" type="email" required
+                     class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+            </div>
+            <div>
+              <label for="reg-pass" class="block text-gray-700 font-medium mb-1">Passwort</label>
+              <input id="reg-pass" name="password" type="password" required
+                     class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+            </div>
+
+            <div class="space-y-2">
+              <label class="flex items-start gap-2">
+                <input id="chk-agb" type="checkbox" class="mt-1 h-4 w-4 text-emerald-600 border-gray-300 rounded">
+                <span class="text-sm">Ich akzeptiere die <a href="../SPAContent/YW50aS5icnV0ZWZvcmNl.QUdC.html" class="text-emerald-600 hover:text-emerald-800 underline">AGB</a>.</span>
+              </label>
+              <label class="flex items-start gap-2">
+                <input id="chk-privacy" type="checkbox" class="mt-1 h-4 w-4 text-emerald-600 border-gray-300 rounded">
+                <span class="text-sm">Ich akzeptiere die <a href="../SPAContent/YW50aS5icnV0ZWZvcmNl.RGF0ZW5zdHphcnQ.html" class="text-emerald-600 hover:text-emerald-800 underline">Datenschutz&shy;bestimmungen</a>.</span>
+              </label>
+            </div>
+
+            <button id="btn-register" type="submit"
+                    class="w-full bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-xl shadow disabled:opacity-50 disabled:cursor-not-allowed">
+              Registrieren
+            </button>
+
+            <p id="register-msg" class="hidden text-sm text-emerald-700 mt-2" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <!-- Anmeldung -->
+        <div class="bg-white shadow rounded-2xl p-6">
+          <div class="flex items-center justify-center text-emerald-700 text-3xl mb-3"><i class="fas fa-right-to-bracket"></i></div>
+          <h2 class="font-bold text-xl text-emerald-900 mb-3 text-center">Anmeldung</h2>
+          <form id="login-form" class="space-y-4" novalidate>
+            <div>
+              <label for="log-email" class="block text-gray-700 font-medium mb-1">E-Mail</label>
+              <input id="log-email" name="email" type="email" required
+                     class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+            </div>
+            <div>
+              <label for="log-pass" class="block text-gray-700 font-medium mb-1">Passwort</label>
+              <input id="log-pass" name="password" type="password" required
+                     class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+            </div>
+            <button type="submit" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-xl shadow">Anmelden</button>
+            <p id="login-msg" class="hidden text-sm text-emerald-700 mt-2" aria-live="polite"></p>
+          </form>
+          <div class="text-center text-sm text-gray-600 mt-4">
+            <p>Kein Zugang? <a href="#" id="to-register" class="text-emerald-600 hover:text-emerald-800 underline">Jetzt registrieren</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hinweiskarte bei Problemen -->
+      <div class="mt-6 bg-white shadow rounded-2xl p-6 text-center">
+        <h3 class="font-bold text-lg text-emerald-900 mb-2">Probleme bei der Registrierung?</h3>
+        <p class="text-gray-700">Wenn die Registrierung nicht funktioniert, versuche die <span class="font-medium">Anmeldung</span> oder kontaktiere den Support über die <a href="../SPAContent/YW50aS5icnV0ZWZvcmNl.c3VwcG9ydA.html" class="text-emerald-600 hover:text-emerald-800 underline">Supportseite</a>.</p>
+      </div>
+    </section>
+
+    <!-- Rechtliches Kurzinfo -->
+    <section class="text-sm text-gray-600 text-center max-w-2xl mx-auto">
+      Mit deiner Registrierung bestätigst du, dass du unsere <a href="../SPAContent/YW50aS5icnV0ZWZvcmNl.QUdC.html" class="text-emerald-600 hover:text-emerald-800 underline">AGB</a> und unsere 
+      <a href="../SPAContent/YW50aS5icnV0ZWZvcmNl.RGF0ZW5zdHphcnQ.html" class="text-emerald-600 hover:text-emerald-800 underline">Datenschutzbestimmungen</a> gelesen hast.
+    </section>
+
+  </main>
+
+  <!-- Cookies Banner (ohne Header/Footer) -->
+  <div id="cookie-banner" class="fixed inset-x-0 bottom-0 z-50 hidden">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-6">
+      <div class="bg-emerald-700 text-white p-4 rounded-2xl shadow-lg flex flex-col sm:flex-row items-center justify-between gap-3">
+        <p class="text-sm">Diese Website verwendet Cookies, um dein Erlebnis zu verbessern. <a href="../SPAContent/YW50aS5icnV0ZWZvcmNl.Q29va2llcw.html" class="underline">Mehr erfahren</a></p>
+        <div class="flex gap-2">
+          <button id="cookie-decline" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20">Ablehnen</button>
+          <button id="cookie-accept" class="px-4 py-2 rounded-xl bg-white text-emerald-700 hover:bg-gray-100">Akzeptieren</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FontAwesome für Icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+  <!-- Interaktion: Validierung, Cookies, Demo-Submit -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // --- Registrierung: AGB/DSGVO erforderlich ---
+      const chkAgb = document.getElementById('chk-agb');
+      const chkPrivacy = document.getElementById('chk-privacy');
+      const btnRegister = document.getElementById('btn-register');
+      const regForm = document.getElementById('register-form');
+      const regMsg = document.getElementById('register-msg');
+
+      function updateRegisterBtn() {
+        btnRegister.disabled = !(chkAgb.checked && chkPrivacy.checked);
+      }
+      updateRegisterBtn();
+      [chkAgb, chkPrivacy].forEach(el => el.addEventListener('change', updateRegisterBtn));
+
+      regForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (btnRegister.disabled) return;
+        regMsg.textContent = 'Registrierung gesendet. (Demo)';
+        regMsg.classList.remove('hidden');
+      });
+
+      // --- Anmeldung Demo ---
+      const loginForm = document.getElementById('login-form');
+      const loginMsg = document.getElementById('login-msg');
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        loginMsg.textContent = 'Anmeldung gesendet. (Demo)';
+        loginMsg.classList.remove('hidden');
+      });
+
+      // Scroll zu Registrierung wenn Link geklickt wird
+      const toRegister = document.getElementById('to-register');
+      if (toRegister) {
+        toRegister.addEventListener('click', (e) => {
+          e.preventDefault();
+          regForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+
+      // --- Cookies Banner ---
+      const banner = document.getElementById('cookie-banner');
+      const btnAccept = document.getElementById('cookie-accept');
+      const btnDecline = document.getElementById('cookie-decline');
+      const CONSENT_KEY = 'cookieConsent';
+
+      function showBanner(show) {
+        banner.classList.toggle('hidden', !show);
+      }
+
+      const saved = localStorage.getItem(CONSENT_KEY);
+      if (!saved) showBanner(true);
+
+      btnAccept.addEventListener('click', () => {
+        localStorage.setItem(CONSENT_KEY, 'accepted');
+        showBanner(false);
+      });
+      btnDecline.addEventListener('click', () => {
+        localStorage.setItem(CONSENT_KEY, 'declined');
+        showBanner(false);
+      });
+    });
+  </script>
+</body>
+</html>
