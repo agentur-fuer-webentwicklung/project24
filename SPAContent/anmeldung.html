@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fahrschule Ciaran GmbH</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="../LOGOContent/unternehmen.png">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    html { scrollbar-gutter: stable; }
+    @supports not (scrollbar-gutter: stable) { html { overflow-y: scroll; } }
+    html, body { margin: 0; height: 100%; }
+    body { overflow-x: hidden; }
+  </style>
+</head>
+<body class="bg-black font-sans text-gray-200">
+  <header class="bg-black shadow-md py-4 relative border-b border-red-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div class="flex items-center relative">
+        <button id="menu-button" class="p-2 rounded-full text-gray-300 hover:text-red-600">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div>
+        <a href="../index.html">
+            <img src="../LOGOContent/unternehmen.png" alt="Fahrschule Ciaran GmbH" style="height: 85px;">
+        </a>
+      </div>
+      <div class="flex items-center">
+        <button id="scroll-footer" class="p-2 rounded-full text-gray-300 hover:text-red-600">
+          <i class="fas fa-angle-down"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div id="overlay" class="fixed inset-0 bg-black/50 hidden opacity-0 transition-opacity duration-300 z-40"></div>
+  <aside id="menu" class="fixed top-0 left-0 w-64 h-full bg-red-900 shadow-lg transform -translate-x-full transition-transform duration-300 z-50">
+    <div class="flex justify-between items-center p-4 border-b border-black/20">
+      <h2 class="text-lg font-bold text-white">Menü</h2>
+      <button id="close-menu" class="text-gray-300 hover:text-white text-2xl">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <ul class="p-4 space-y-4">
+      <li><a href="../SPAContent/anmeldung.html" class="block text-gray-300 hover:text-white">Termin</a></li>
+      <li><a href="../SPAContent/erreichbarkeit.html" class="block text-gray-300 hover:text-white">Erreichbarkeit</a></li>
+      <li><a href="../SPAContent/klassen.html" class="block text-gray-300 hover:text-white">Klassen</a></li>
+      <li><a href="../SPAContent/seminare.html" class="block text-gray-300 hover:text-white">Seminare (ASF)</a></li>
+    </ul>
+  </aside>
+  <main id="content"></main>
+<footer class="bg-red-950 text-red-300 py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-4 md:gap-8 text-center md:text-left">
+      <div>
+        <h3 class="text-lg md:text-xl font-bold mb-3 text-white">Fahrschule Ciaran GmbH</h3>
+        <p class="text-red-300 text-sm leading-relaxed">
+          Die Fahrschule Ciaran GmbH steht für moderne Ausbildung, klare Strukturen und höchste Erfolgsquoten. Unser erfahrenes Team begleitet dich Schritt für Schritt – vom ersten Theorieunterricht bis zur erfolgreichen Prüfung.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3 text-base text-white">Fahrschule</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="../SPAContent/seminare.html" class="text-red-300 hover:text-red-400">Seminare (ASF)</a></li>
+          <li><a href="../SPAContent/erreichbarkeit.html" class="text-red-300 hover:text-red-400">Erreichbarkeit</a></li>
+          <li><a href="../SPAContent/anmeldung.html" class="text-red-300 hover:text-red-400">Anmeldung</a></li>
+          <li><a href="../SPAContent/klassen.html" class="text-red-300 hover:text-red-400">Klassen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3 text-base text-white">Informationen</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="../SPAContent/datenschutz.html" class="text-red-300 hover:text-red-400">Datenschutz</a></li>
+          <li><a href="../SPAContent/impressum.html" class="text-red-300 hover:text-red-400">Impressum</a></li>
+          <li><a href="../SPAContent/cookies.html" class="text-red-300 hover:text-red-400">Cookies</a></li>
+          <li><a href="../SPAContent/agb.html" class="text-red-300 hover:text-red-400">AGB</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-3 text-base text-white">Kontakt</h4>
+        <ul class="space-y-2 text-sm">
+          <li class="flex justify-center md:justify-start items-center text-red-300">
+            <i class="fas fa-map-marker-alt mr-2"></i>
+            <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" class="hover:text-red-400">
+              <div>Deine Straße 1, 12345 Münster</div>
+            </a>
+          </li>
+          <li class="flex justify-center md:justify-start items-center text-red-300">
+            <i class="fas fa-envelope mr-2"></i>
+            <a href="mailto:kontakt@fahrschule-ciaran.de" class="hover:text-red-400">info@fahrschule-ciaran.de</a>
+          </li>
+          <li class="flex justify-center md:justify-start items-center text-red-300">
+            <i class="fas fa-phone mr-2"></i>
+            <a href="tel:+491234567890" class="hover:text-red-400">01234 567890</a>
+          </li>
+        </ul>
+        <div class="flex justify-center md:justify-start space-x-4 mt-5">
+<a href="https://www.youtube.com" class="bg-red-800/20 rounded-full p-2 hover:bg-red-600/50 transition w-10 h-10 flex items-center justify-center">
+  <img src="../LOGOContent/youtube.png" alt="YouTube" class="w-6 h-6 object-contain filter brightness-125">
+</a>
+<a href="https://www.instagram.com" class="bg-red-800/20 rounded-full p-2 hover:bg-red-600/50 transition w-10 h-10 flex items-center justify-center">
+  <img src="../LOGOContent/instagram.png" alt="Instagram" class="w-6 h-6 object-contain filter brightness-125">
+</a>
+<a href="https://www.facebook.com" class="bg-red-800/20 rounded-full p-2 hover:bg-red-600/50 transition w-10 h-10 flex items-center justify-center">
+  <img src="../LOGOContent/facebook.png" alt="Facebook" class="w-6 h-6 object-contain filter brightness-125">
+</a>
+<a href="https://wa.me/49123456789" class="bg-red-800/20 rounded-full p-2 hover:bg-red-600/50 transition w-10 h-10 flex items-center justify-center">
+  <img src="../LOGOContent/whatsapp.png" alt="WhatsApp" class="w-6 h-6 object-contain filter brightness-125">
+</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-red-900 mt-10 pt-6 text-center">
+      <p class="text-white text-sm">© 2025 Fahrschule Ciaran GmbH. Alle Rechte vorbehalten.</p>
+    </div>
+  </div>
+</footer>
+  <div id="loader"
+     class="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center
+            opacity-100 pointer-events-auto transition-opacity duration-200">
+    <div class="relative w-24 h-24 flex items-center justify-center">
+      <div class="absolute inset-0 rounded-full bg-red-800 opacity-20 animate-ping"></div>
+      <div class="absolute w-16 h-16 rounded-full border-4 border-red-800 animate-spin"></div>
+    </div>
+    <p class="mt-6 text-red-800 text-xl font-medium tracking-widest">Fahrschule Ciaran GmbH</p>
+  </div>
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-red-900 text-gray-200 p-4 shadow-lg z-50 hidden">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0">
+    <p class="text-sm md:text-base text-center md:text-left">
+      Wir verwenden Cookies, um Ihr Erlebnis zu verbessern. Mehr erfahren Sie in unserer 
+      <a href="../SPAContent/YW50aS5icnV0ZWZvcmNl.Q29va2llcw.html" class="underline hover:text-white">Cookie-Richtlinie</a>.
+    </p>
+    <div class="flex space-x-3">
+      <button id="cookie-accept" class="bg-red-800 hover:bg-red-700 px-4 py-2 rounded-lg text-sm font-semibold">
+        Akzeptieren
+      </button>
+      <button id="cookie-decline" class="bg-gray-500 hover:bg-gray-600 px-4 py-2 rounded-lg text-sm font-semibold">
+        Ablehnen
+      </button>
+    </div>
+  </div>
+</div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const loader = document.getElementById('loader');
+      const content = document.getElementById('content');
+      loader.classList.remove('hidden', 'pointer-events-none');
+      loader.classList.remove('opacity-0');
+      content.classList.add('hidden');
+      fetch('../AJAXContent/content.anmeldung.html')                              // Verbindung
+        .then(r => r.text())
+        .then(html => { content.innerHTML = html; })
+        .catch(err => { console.error('Fehler beim Laden:', err); })
+        .finally(() => {
+          setTimeout(() => {
+            loader.classList.add('opacity-0');
+            setTimeout(() => {
+              loader.classList.add('hidden', 'pointer-events-none');
+              content.classList.remove('hidden');
+            }, 0);
+          }, 650);
+        });
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuButton = document.getElementById("menu-button");
+      const menu = document.getElementById("menu");
+      const closeMenu = document.getElementById("close-menu");
+      const overlay = document.getElementById("overlay");
+
+      function openMenu() {
+        menu.classList.remove("-translate-x-full");
+        overlay.classList.remove("hidden");
+        setTimeout(() => overlay.classList.add("opacity-100"), 10);
+      }
+
+      function closeMenuFn() {
+        menu.classList.add("-translate-x-full");
+        overlay.classList.remove("opacity-100");
+        setTimeout(() => overlay.classList.add("hidden"), 300);
+      }
+
+      menuButton.addEventListener("click", openMenu);
+      closeMenu.addEventListener("click", closeMenuFn);
+      overlay.addEventListener("click", closeMenuFn);
+    });
+      document.addEventListener("DOMContentLoaded", () => {
+    const banner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("cookie-accept");
+    const declineBtn = document.getElementById("cookie-decline");
+    const cookieChoice = localStorage.getItem("cookie-consent");
+    if (!cookieChoice) {
+      banner.classList.remove("hidden");
+    }
+    acceptBtn.addEventListener("click", () => {
+      localStorage.setItem("cookie-consent", "accepted");
+      banner.classList.add("hidden");
+    });
+    declineBtn.addEventListener("click", () => {
+      localStorage.setItem("cookie-consent", "declined");
+      banner.classList.add("hidden");
+    });
+  });
+      document.addEventListener("DOMContentLoaded", () => {
+      const scrollFooterBtn = document.getElementById("scroll-footer");
+      scrollFooterBtn.addEventListener("click", () => {
+        document.querySelector("footer").scrollIntoView({ behavior: "smooth" });
+      });
+    });
+  </script>
+</body>
+</html>
